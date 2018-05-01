@@ -39,6 +39,7 @@ public:
 			return "";
 		}
 	}
+	void deleteLog(string name);
 	InputOutup();
 	~InputOutup();
 };

@@ -29,6 +29,13 @@ bool InputOutup::fillDir(string path)
 	return true;
 }
 
+void InputOutup::deleteLog(string name)
+{
+	LPTSTR x = new TCHAR[name.size() + 1];
+	strcpy(x, name.c_str());
+	DeleteFile(x);
+}
+
 InputOutup::InputOutup()
 {
 }
