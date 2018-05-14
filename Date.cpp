@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Date.h"
-
+/*
+contains current date
+*/
 void Date::setDate(int day, int month, int year)
 {
 	this->_day = day;

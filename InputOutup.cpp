@@ -32,7 +32,7 @@ bool InputOutup::fillDir(string path)
 void InputOutup::deleteLog(string name)
 {
 	LPTSTR x = new TCHAR[name.size() + 1];
-	strcpy(x, name.c_str());
+	strcpy((char*)x, name.c_str());
 	DeleteFile(x);
 }
 

@@ -5,11 +5,12 @@
 #include <string>
 #include <sstream>
 using namespace std;
-
+/*
+contains current time and date
+writes applog file
+*/
 class CurrentTimeDate : public Time, public Date
 {
-//private:
-	
 public:
 	template <class TYPE>
 	string toString(const TYPE &data);

