@@ -2,6 +2,7 @@
 #include "CurrentTimeDate.h"
 #include <fstream>
 #include <iostream>
+#include "InputOutup.h"
 using namespace std;
 /*
 set current time and date by default, using Time::setTime and Date::setDate
@@ -28,7 +29,9 @@ but where .exe situates
 */
 void CurrentTimeDate::writeAppLog(const string data)
 {
-	ofstream file("AppLog.txt", ios::app);
+	InputOutup temp;
+	string path = temp.getPath(true);
+	ofstream file(path + "AppLog.txt", ios::app);
 	file << "[" << this->getTimeDateString() << "]" << "\n" << data << endl << "\n";
 	file.close();
 }

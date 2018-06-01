@@ -11,15 +11,17 @@ writes applog file
 */
 class CurrentTimeDate : public Time, public Date
 {
+private:
+	string getDateString();
+	string getTimeString();
 public:
+	void writeAppLog(const string data);	
 	template <class TYPE>
 	string toString(const TYPE &data);
 	CurrentTimeDate();
-	CurrentTimeDate(int day, int month, int year, int hour, int minute, int second);
-	void writeAppLog(const string data);
-	string getDateString();
-	string getTimeString();
 	string getTimeDateString();
+	CurrentTimeDate(int day, int month, int year, int hour, int minute, int second);
+	
 	~CurrentTimeDate();
 };
 

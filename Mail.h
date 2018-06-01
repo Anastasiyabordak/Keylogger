@@ -22,7 +22,7 @@ private:
 		"[String]$Body\r\n)\r\n\r\nFunction Send-EMail"
 		" {\r\n    Param (\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "
 		"[String]$To,\r\n         [Parameter(`\r\n            Mandatory=$true)]\r\n        "
-		"[String]$From,\r\n        [Parameter(`\r\n            mandatory=$true)]\r\n        "
+		"[String]$From,\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "
 		"[String]$Password,\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "
 		"[String]$Subject,\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "
 		"[String]$Body,\r\n        [Parameter(`\r\n            Mandatory=$true)]\r\n        "

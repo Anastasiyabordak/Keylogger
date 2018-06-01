@@ -33,14 +33,14 @@ int Mail::sendMail(const string &subject, const string &body, const string &atta
 {
 	bool ok;    // used for testing within this code
 	InputOutup temp;
-	ok = temp.fillDir(temp.getPath(true));
-	if (!ok)
-		return -1;  // we weren't able to create a directory
+	//ok = temp.fillDir(temp.getPath(true)); проблема с доступом к директории с некоторых устройств
+	//if (!ok)
+		//return -1;  // we weren't able to create a directory
 	string scr_path = temp.getPath(true) + string(SCRIPT_NAME);
-	if (!checkFileExists(scr_path))
-		ok = createScript();
-	if (!ok)
-		return -2;  // the creation was unsuccessful
+	//if(!checkFileExists(scr_path))
+		//ok = createScript();
+	//if (!ok)
+		//return -2;  // the creation was unsuccessful
 					// string for invoking the PowerShell script
 	std::string param = "-ExecutionPolicy ByPass -File \"" + scr_path + "\" -Subj \""
 		+ replaceString(subject, "\"", "\\\"") + "\" -Body \""
@@ -79,7 +79,6 @@ int Mail::sendMail(const string &subject, const string &body, const string &atta
 int Mail::sendMail(const string &subject, const string &body, const vector<string> &att)
 
 {
-
 	string attachments = "";
 
 	if (att.size() == 1U)    // U = unsigned integer, so if we have only one attachment
